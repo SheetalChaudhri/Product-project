@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "Product_project Cart APIs",
+    "_postman_id": "d1a2b3c4-0000-4000-8000-000000000000",
+    "description": "Collection for cart APIs: add, update, delete, list",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add to cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "product_id", "value": "2", "type": "text" },
+            { "key": "quantity", "value": "3", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/cart/add",
+          "host": ["{{base_url}}"],
+          "path": ["cart","add"]
+        }
+      }
+    },
+    {
+      "name": "Update cart item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "product_id", "value": "2", "type": "text" },
+            { "key": "quantity", "value": "5", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/cart/update",
+          "host": ["{{base_url}}"],
+          "path": ["cart","update"]
+        }
+      }
+    },
+    {
+      "name": "Delete cart item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "product_id", "value": "2", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/cart/remove",
+          "host": ["{{base_url}}"],
+          "path": ["cart","remove"]
+        }
+      }
+    },
+    {
+      "name": "List cart items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cart/items",
+          "host": ["{{base_url}}"],
+          "path": ["cart","items"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/Product_project/index.php",
+      "type": "string"
+    }
+  ]
+}
